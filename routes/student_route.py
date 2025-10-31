@@ -93,6 +93,9 @@ def login():
         print("check")
 
         # making card
+        print("befor card")
+        print(student["issue_date"])
+
         make_card(student)
         
         svg_path_1 = "../tmp/student_id_card_front.svg"
@@ -215,7 +218,7 @@ def get_student_credential():
     
         # Update the password in the database
         result = student_collection.update_one(
-            {"_id": student["_id"]},  # Filter by student ID
+            {"_id": ObjectId(student["_id"])},  # Filter by student ID
             {"$set": {"password": hashed_password}}
         )
 
@@ -421,8 +424,9 @@ def make_card(student_data):
     # "sign": "https://res.cloudinary.com/dr9w7oyqe/image/upload/v1761220064/local_uploads/kmkyjzyfb3bla7lkoiqr.png",
     # "year": 1
     # }
-
-    with open('../other/college.json', 'r') as file:
+    print(student_data["issue_date"])
+    print(str(student_data["issue_date"])[:10])
+    with open('other/college.json', 'r') as file:
         college_data = json.load(file)  # Load JSON data into a Python dictionary
 
     def ordinal(n):
@@ -440,7 +444,7 @@ def make_card(student_data):
        "registration_no" : student_data["registration_no"],
        "type" : "student"
     })
-    qr_code_url = "../tmp/qrcode.png"
+    qr_code_url = "tmp/qrcode.png"
 
     merge_svg_template_front({
         "name": student_data["name"],
@@ -475,8 +479,8 @@ def make_card(student_data):
 
     return {
         "message": "Card generated successfully",
-        "front_svg_path": "../tmp/student_id_card_front.svg",
-        "back_svg_path": "../tmp/student_id_card_back.svg"
+        "front_svg_path": "tmp/student_id_card_front.svg",
+        "back_svg_path": "tmp/student_id_card_back.svg"
     }
 
 
@@ -503,6 +507,9 @@ def _build_cors_preflight_response():
 
 
 
+
+# with open('other/college.json', 'r') as file:
+#     college_data = json.load(file)  # Load JSON data into a Python dictionary
 
 
 

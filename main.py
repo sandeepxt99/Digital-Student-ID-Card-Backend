@@ -21,8 +21,8 @@ app.permanent_session_lifetime = timedelta(days=30)
 for bp in all_blueprints:
     app.register_blueprint(bp)
 
-# if __name__ == "__main__":
-#   app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 3000)))
+if __name__ == "__main__":
+  app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 3000)))
 
 
 

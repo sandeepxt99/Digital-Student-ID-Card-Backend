@@ -118,7 +118,7 @@ def replace_image_by_id(root, placeholder_id, image_data_uri):
 
 # --- 4. MAIN MERGING LOGIC ---
 
-def merge_svg_template_front(data,SVG_TEMPLATE_PATH="../other/id_card_front_template.svg",OUTPUT_PATH="../tmp/student_id_card_front.svg" ):
+def merge_svg_template_front(data,SVG_TEMPLATE_PATH="other/id_card_front_template.svg",OUTPUT_PATH="../tmp/student_id_card_front.svg" ):
     """Main function to perform data merging into the SVG template."""
     
     # 1. Load the template SVG
@@ -175,7 +175,7 @@ def merge_svg_template_front(data,SVG_TEMPLATE_PATH="../other/id_card_front_temp
         print(f"Error saving file: {e}")
 
 
-def merge_svg_template_back(data,SVG_TEMPLATE_PATH="../other/id_card_back_template.svg",OUTPUT_PATH="../tmp/student_id_card_back.svg" ):
+def merge_svg_template_back(data,SVG_TEMPLATE_PATH="other/id_card_back_template.svg",OUTPUT_PATH="../tmp/student_id_card_back.svg" ):
     """Main function to perform data merging into the SVG template."""
     
     # 1. Load the template SVG
@@ -225,7 +225,7 @@ def merge_svg_template_back(data,SVG_TEMPLATE_PATH="../other/id_card_back_templa
 # for teacher only
 
 
-def merge_svg_template_front_teacher(data,SVG_TEMPLATE_PATH="../other/teacher_id_card_front_template.svg",OUTPUT_PATH="../tmp/teacher_id_card_front.svg" ):
+def merge_svg_template_front_teacher(data,SVG_TEMPLATE_PATH="other/teacher_id_card_front_template.svg",OUTPUT_PATH="../tmp/teacher_id_card_front.svg" ):
     """Main function to perform data merging into the SVG template."""
     
     # 1. Load the template SVG

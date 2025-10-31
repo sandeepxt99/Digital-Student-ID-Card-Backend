@@ -100,8 +100,8 @@ def teacher_login():
         # making card
         # make_card(teacher)
         
-        svg_path_1 = "../tmp/teacher_id_card_front.svg"
-        svg_path_2 = "../tmp/teacher_id_card_back.svg"
+        svg_path_1 = "tmp/teacher_id_card_front.svg"
+        svg_path_2 = "tmp/teacher_id_card_back.svg"
 
         # Read SVG files and encode in base64 (so they can be sent via JSON)
         def encode_svg(path):
@@ -283,7 +283,7 @@ def get_teacher_credential():
     
         # Update the password in the database
         result = teacher_collection.update_one(
-            {"_id": teacher["_id"]},  # Filter by student ID
+            {"_id": ObjectId(teacher["_id"])},  # Filter by student ID
             {"$set": {"password": hashed_password}}
         )
 
@@ -331,7 +331,7 @@ def get_teacher_credential():
 
 def make_card(teacher_data):
  
-    with open('../other/college.json', 'r') as file:
+    with open('other/college.json', 'r') as file:
         college_data = json.load(file)  # Load JSON data into a Python dictionary
 
   
@@ -375,8 +375,8 @@ def make_card(teacher_data):
 
     return {
         "message": "Card generated successfully",
-        "front_svg_path": "../tmp/teacher_id_card_front.svg",
-        "back_svg_path": "../tmp/teacher_id_card_back.svg"
+        "front_svg_path": "tmp/teacher_id_card_front.svg",
+        "back_svg_path": "tmp/teacher_id_card_back.svg"
     }
 
 

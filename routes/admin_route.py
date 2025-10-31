@@ -175,7 +175,7 @@ def add_student():
             "dob": datetime.strptime(payload.get('dob'), "%Y-%m-%d"),
             "profile": profile_url,
             "sign" : "",
-            "issue date": datetime.now() 
+            "issue_date": datetime.now() 
         }
 
         # "issue date": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
