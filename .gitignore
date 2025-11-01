@@ -3,7 +3,6 @@ __pycache__
 .idx
 .venv
 GEMINI.md
-tmp
 devserver.sh
 task.todo
 README.md

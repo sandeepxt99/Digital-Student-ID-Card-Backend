@@ -3,12 +3,18 @@ from flask_cors import CORS
 import os
 import sys
 from datetime import timedelta
+from pathlib import Path
 
 
 from routes import all_blueprints
 app = Flask(__name__)
 # CORS(app, supports_credentials=True)
 CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
+
+# choose location (app.root_path/tmp)
+TMP_DIR = Path(app.root_path) / "tmp"
+TMP_DIR.mkdir(parents=True, exist_ok=True)   # creates if missing
+
 
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'a_very_secret_key_that_you_should_change')
 app.permanent_session_lifetime = timedelta(days=30)

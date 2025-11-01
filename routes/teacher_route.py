@@ -341,7 +341,7 @@ def make_card(teacher_data):
        "phone" : teacher_data["phone"],
        "type" : "teacher"
     })
-    qr_code_url = "../tmp/qrcode.png"
+    qr_code_url = "tmp/qrcode.png"
 
     merge_svg_template_front_teacher({
         "name": teacher_data["name"],
