@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 import random
 import string
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+# sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from utils.qr_code import make_qr_code
 from utils.card import merge_svg_template_back, merge_svg_template_front
@@ -444,7 +444,7 @@ def make_card(student_data):
        "registration_no" : student_data["registration_no"],
        "type" : "student"
     })
-    qr_code_url = "tmp/qrcode.png"
+    qr_code_url = "../tmp/qrcode.png"
 
     merge_svg_template_front({
         "name": student_data["name"],

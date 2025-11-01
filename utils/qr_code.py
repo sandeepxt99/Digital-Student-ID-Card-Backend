@@ -2,7 +2,7 @@ import qrcode
 
 # Create QR code instance
 
-def make_qr_code(data,output_path="/tmp/qrcode.png"):
+def make_qr_code(data,output_path="../tmp/qrcode.png"):
     qr = qrcode.QRCode(
     version=1,  # Controls the size of the QR Code (1–40)
     error_correction=qrcode.constants.ERROR_CORRECT_L,

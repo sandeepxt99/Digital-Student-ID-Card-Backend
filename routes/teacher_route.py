@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 import random
 import string
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+# sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from utils.qr_code import make_qr_code
 from utils.card import merge_svg_template_back, merge_svg_template_front_teacher
@@ -98,10 +98,10 @@ def teacher_login():
         session.permanent = True
 
         # making card
-        # make_card(teacher)
+        make_card(teacher)
         
-        svg_path_1 = "tmp/teacher_id_card_front.svg"
-        svg_path_2 = "tmp/teacher_id_card_back.svg"
+        svg_path_1 = "../tmp/teacher_id_card_front.svg"
+        svg_path_2 = "../tmp/teacher_id_card_back.svg"
 
         # Read SVG files and encode in base64 (so they can be sent via JSON)
         def encode_svg(path):

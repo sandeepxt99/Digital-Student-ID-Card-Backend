@@ -4,9 +4,7 @@ import os
 import sys
 from datetime import timedelta
 
-# sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-# from routes import all_blueprints  # Import from __init__.py
 from routes import all_blueprints
 app = Flask(__name__)
 # CORS(app, supports_credentials=True)
